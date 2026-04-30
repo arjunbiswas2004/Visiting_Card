@@ -1,62 +1,91 @@
-:root{
-    --bodyColor:rgb(20,20,20);
-}
-
-body{
-    background-color: var(--bodyColor);
-    color: white;
-    display: flex;
-    justify-content: center;
+*{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: rgb(20,20,20);
+    display: flex;
+    justify-content: center;
+    color: white;
+}
 .container{
+    width: 95%;
     height: auto;
-    width: 90%;
+    margin-top: 1.5rem;
+    margin-bottom: 5rem;
     border: 1px solid rgba(255,255,255,0.5);
     border-radius: 10px;
     overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .banner{
     width: 100%;
 }
-h1{
-    text-align: center;
-    /* margin:0 10rem 2rem 10rem; */
-    /* padding: 1rem 0 0.2rem 0; */
-    position: relative;
+.heading{
+    width: auto;
+    padding: 0 1.5rem;
+    border-bottom: 1px solid rgb(88,173,255);
+    margin: 2rem 0;
 }
-h1::after{
-    content: '';
-    position: absolute;
-    bottom: 0px;
-    left: 10%;
-    width: 80%;
-    height: 1px;
-    background-color: rgb(88,173,255);
+h1{
+    font-size: 2rem;
 }
 .content{
     height: auto;
-    width: calc(100%-1rem);
-    padding:0 3rem 2rem 3rem;
+    width: 100%;
+    padding: 0 1rem 0 3rem;
+
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* grid-template-rows: repeat(5,auto); */
-    column-gap: 1rem;
+    grid-template-columns: 1fr;
 }
-.content .box{
-    /* border: 1px solid rgba(255,255,255,0.5); */
-    line-height: 0.3rem;
+.box{
+    height: auto;
+    margin: 0.2rem 0;
 }
-.content .box i, p{
-    display: inline-block;
-    font-size: 13px;
+.box p{
+    display: inline;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
 }
-.content a{
-    color: rgb(88,173,255);
+.box i{
+    font-size: 1rem;
+    margin-right: 0.5rem;
+}
+.box a{
+    color: rgba(88,173,255,0.8);
+}
+.ribbon{
+    height: 3rem;
+    width: 100%;
+    background-color: rgba(88,173,255,0.1);
+    margin: 3rem 0;
 }
 
-@media (max-width:480px){
+
+
+
+@media (min-width:768px) {
+    .container{
+        width: 60%;
+        margin-top: 2rem;
+    }
+}
+@media (min-width:1024px) {
+    .container{
+        width: 70%;
+        margin-top: 2rem;
+    }
     .content{
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width:400px) {
+    h1{
+        font-size: 1.5rem;
     }
 }
